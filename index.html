@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HumanoidX Club - CAD | Electronics | Mechanical</title>
+    <title>TechForge Club - CAD | Electronics | Mechanical</title>
     <link rel="stylesheet" href="style.css">
     <!-- FREE Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -12,6 +12,13 @@
 </head>
 <body>
 
+    <!-- ============ SCROLL PROGRESS BAR ============ -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ============ CUSTOM CURSOR ============ -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
     <!-- ============ LOADER SCREEN ============ -->
     <div id="loader">
         <div class="loader-content">
@@ -19,7 +26,7 @@
                 <i class="fas fa-gear gear gear-1"></i>
                 <i class="fas fa-gear gear gear-2"></i>
             </div>
-            <h1 class="loader-text">HUMANOIDX</h1>
+            <h1 class="loader-text">TECHFORGE</h1>
             <div class="loading-bar">
                 <div class="loading-fill"></div>
             </div>
@@ -38,6 +45,7 @@
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#domains" class="nav-link">Domains</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#events" class="nav-link">Events</a></li>
                 <li><a href="#team" class="nav-link">Team</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
@@ -55,21 +63,59 @@
 
     <!-- ============ HERO SECTION ============ -->
     <section id="home" class="hero">
+
+        <!-- Particle Network Canvas -->
+        <canvas id="networkCanvas"></canvas>
+
+        <!-- Floating Geometric Shapes -->
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+
+        <!-- Floating Tech Icons -->
+        <div class="tech-icons-float">
+            <i class="fas fa-cogs tech-icon-float"
+               style="top:15%; left:8%; animation-delay:0s; font-size:4rem;"></i>
+            <i class="fas fa-microchip tech-icon-float"
+               style="top:70%; left:3%; animation-delay:-2s; font-size:3rem; color:var(--secondary);"></i>
+            <i class="fas fa-drafting-compass tech-icon-float"
+               style="top:25%; right:8%; animation-delay:-4s; font-size:3.5rem; color:var(--accent);"></i>
+            <i class="fas fa-robot tech-icon-float"
+               style="top:75%; right:5%; animation-delay:-1s; font-size:3rem;"></i>
+            <i class="fas fa-bolt tech-icon-float"
+               style="top:50%; left:50%; animation-delay:-3s; font-size:2rem;"></i>
+        </div>
+
+        <!-- Old floating particles -->
         <div class="hero-particles" id="particles"></div>
+
+        <!-- Main Hero Content -->
         <div class="hero-content">
             <div class="hero-badge">
                 <i class="fas fa-bolt"></i>
                 <span>INNOVATION HUB</span>
             </div>
+
             <h1 class="hero-title">
-                <span class="line-1">WE BUILD</span>
-                <span class="line-2">THE <span class="typing-text" id="typingText"></span><span class="cursor">|</span></span>
+                <span class="line-1 glitch" data-text="WE BUILD">WE BUILD</span>
+                <span class="line-2">
+                    THE <span class="typing-text" id="typingText"></span>
+                    <span class="cursor">|</span>
+                </span>
                 <span class="line-3">OF TOMORROW</span>
             </h1>
+
             <p class="hero-subtitle">
-                A student-led technical club mastering 
-                <strong>CAD Design</strong>, <strong>Electronics</strong> & <strong>Mechanical Engineering</strong>
+                A student-led technical club mastering
+                <strong>CAD Design</strong>,
+                <strong>Electronics</strong> &
+                <strong>Mechanical Engineering</strong>
             </p>
+
             <div class="hero-buttons">
                 <a href="#join" class="btn btn-primary">
                     <i class="fas fa-rocket"></i>
@@ -80,6 +126,7 @@
                     <span>Explore Domains</span>
                 </a>
             </div>
+
             <div class="hero-stats">
                 <div class="stat">
                     <span class="stat-number" data-target="150">0</span>+
@@ -99,20 +146,30 @@
                 </div>
             </div>
         </div>
+
+        <!-- Scroll Indicator -->
         <div class="scroll-indicator">
             <div class="mouse">
                 <div class="wheel"></div>
             </div>
             <span>Scroll Down</span>
         </div>
+
     </section>
+
+    <!-- Glow Line -->
+    <div class="glow-line"></div>
 
     <!-- ============ ABOUT SECTION ============ -->
     <section id="about" class="about section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-info-circle"></i> WHO WE ARE</span>
-                <h2 class="section-title">About <span class="highlight">HumanoidX</span></h2>
+                <span class="section-tag">
+                    <i class="fas fa-info-circle"></i> WHO WE ARE
+                </span>
+                <h2 class="section-title">
+                    About <span class="highlight">TechForge</span>
+                </h2>
                 <div class="title-line"></div>
             </div>
 
@@ -120,14 +177,15 @@
                 <div class="about-content">
                     <h3>Forging the Future, One Project at a Time</h3>
                     <p>
-                        HumanoidX is a passionate community of engineers, designers, and innovators 
-                        who believe in learning by doing. Founded by students who wanted to bridge 
-                        the gap between classroom theory and real-world application.
+                        TechForge is a passionate community of engineers, designers,
+                        and innovators who believe in learning by doing. Founded by
+                        students who wanted to bridge the gap between classroom
+                        theory and real-world application.
                     </p>
                     <p>
-                        We provide hands-on workshops, collaborative projects, and competitive 
-                        opportunities across three core domains: Computer-Aided Design, 
-                        Electronics, and Mechanical Engineering.
+                        We provide hands-on workshops, collaborative projects, and
+                        competitive opportunities across three core domains:
+                        Computer-Aided Design, Electronics, and Mechanical Engineering.
                     </p>
                     <div class="about-features">
                         <div class="feature">
@@ -148,32 +206,143 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="about-visual">
                     <div class="vision-card">
-                        <div class="card-icon"><i class="fas fa-eye"></i></div>
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
                         <h4>Our Vision</h4>
-                        <p>To create a generation of problem-solvers who can design, build, and innovate.</p>
+                        <p>
+                            To create a generation of problem-solvers who can
+                            design, build, and innovate without limits.
+                        </p>
                     </div>
                     <div class="mission-card">
-                        <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
                         <h4>Our Mission</h4>
-                        <p>Making technical education accessible, practical, and exciting for every student.</p>
+                        <p>
+                            Making technical education accessible, practical,
+                            and exciting for every student.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Glow Line -->
+    <div class="glow-line"></div>
+
+    <!-- ============ SKILLS SECTION ============ -->
+    <section id="skills" class="skills-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">
+                    <i class="fas fa-chart-bar"></i> OUR EXPERTISE
+                </span>
+                <h2 class="section-title">
+                    Club <span class="highlight">Skills</span>
+                </h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">
+                            <i class="fas fa-drafting-compass"></i> CAD / 3D Modeling
+                        </span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="90"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">
+                            <i class="fas fa-microchip"></i> Electronics / Arduino
+                        </span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="85"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">
+                            <i class="fas fa-cogs"></i> Mechanical Design
+                        </span>
+                        <span class="skill-percent">88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="88"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">
+                            <i class="fas fa-robot"></i> Robotics & Automation
+                        </span>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="75"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">
+                            <i class="fas fa-print"></i> 3D Printing
+                        </span>
+                        <span class="skill-percent">92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="92"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">
+                            <i class="fas fa-network-wired"></i> IoT & Embedded Systems
+                        </span>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" data-width="80"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Glow Line -->
+    <div class="glow-line"></div>
+
     <!-- ============ DOMAINS SECTION ============ -->
     <section id="domains" class="domains section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-layer-group"></i> WHAT WE DO</span>
-                <h2 class="section-title">Our <span class="highlight">Domains</span></h2>
+                <span class="section-tag">
+                    <i class="fas fa-layer-group"></i> WHAT WE DO
+                </span>
+                <h2 class="section-title">
+                    Our <span class="highlight">Domains</span>
+                </h2>
                 <div class="title-line"></div>
             </div>
 
             <div class="domains-grid">
+
                 <!-- CAD Domain -->
                 <div class="domain-card" data-domain="cad">
                     <div class="domain-bg"></div>
@@ -181,7 +350,10 @@
                         <i class="fas fa-drafting-compass"></i>
                     </div>
                     <h3>CAD Design</h3>
-                    <p>Master 3D modeling, simulation, and prototyping using industry-standard tools.</p>
+                    <p>
+                        Master 3D modeling, simulation, and prototyping
+                        using industry-standard tools.
+                    </p>
                     <ul class="domain-topics">
                         <li><i class="fas fa-cube"></i> SolidWorks & Fusion 360</li>
                         <li><i class="fas fa-cube"></i> AutoCAD & FreeCAD</li>
@@ -204,7 +376,10 @@
                         <i class="fas fa-microchip"></i>
                     </div>
                     <h3>Electronics</h3>
-                    <p>From circuits to IoT, learn to bring your electronic ideas to life.</p>
+                    <p>
+                        From circuits to IoT, learn to bring your
+                        electronic ideas to life.
+                    </p>
                     <ul class="domain-topics">
                         <li><i class="fas fa-bolt"></i> Arduino & Raspberry Pi</li>
                         <li><i class="fas fa-bolt"></i> PCB Design & Soldering</li>
@@ -226,7 +401,10 @@
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Mechanical</h3>
-                    <p>Understand mechanisms, manufacturing, and mechanical system design.</p>
+                    <p>
+                        Understand mechanisms, manufacturing, and
+                        mechanical system design.
+                    </p>
                     <ul class="domain-topics">
                         <li><i class="fas fa-wrench"></i> Machine Design</li>
                         <li><i class="fas fa-wrench"></i> Thermodynamics & Fluids</li>
@@ -240,16 +418,24 @@
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Glow Line -->
+    <div class="glow-line"></div>
 
     <!-- ============ EVENTS SECTION ============ -->
     <section id="events" class="events section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-calendar-alt"></i> HAPPENINGS</span>
-                <h2 class="section-title">Upcoming <span class="highlight">Events</span></h2>
+                <span class="section-tag">
+                    <i class="fas fa-calendar-alt"></i> HAPPENINGS
+                </span>
+                <h2 class="section-title">
+                    Upcoming <span class="highlight">Events</span>
+                </h2>
                 <div class="title-line"></div>
             </div>
 
@@ -264,10 +450,18 @@
                     <div class="event-content">
                         <div class="event-badge">Workshop</div>
                         <h3>Introduction to Fusion 360</h3>
-                        <p>Learn the basics of 3D CAD modeling from scratch. No experience needed!</p>
+                        <p>
+                            Learn the basics of 3D CAD modeling from scratch.
+                            No experience needed!
+                        </p>
                         <div class="event-meta">
-                            <span><i class="fas fa-clock"></i> 2:00 PM - 5:00 PM</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Lab 204, Engineering Block</span>
+                            <span>
+                                <i class="fas fa-clock"></i> 2:00 PM - 5:00 PM
+                            </span>
+                            <span>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Lab 204, Engineering Block
+                            </span>
                         </div>
                         <a href="#join" class="event-register">Register Now</a>
                     </div>
@@ -281,10 +475,18 @@
                     <div class="event-content">
                         <div class="event-badge competition">Competition</div>
                         <h3>Circuit Builder Challenge</h3>
-                        <p>Design and build a working circuit in 3 hours. Prizes worth $500!</p>
+                        <p>
+                            Design and build a working circuit in 3 hours.
+                            Prizes worth $500!
+                        </p>
                         <div class="event-meta">
-                            <span><i class="fas fa-clock"></i> 10:00 AM - 1:00 PM</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Main Auditorium</span>
+                            <span>
+                                <i class="fas fa-clock"></i> 10:00 AM - 1:00 PM
+                            </span>
+                            <span>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Main Auditorium
+                            </span>
                         </div>
                         <a href="#join" class="event-register">Register Now</a>
                     </div>
@@ -298,28 +500,45 @@
                     <div class="event-content">
                         <div class="event-badge seminar">Seminar</div>
                         <h3>Industry Talk: Future of Manufacturing</h3>
-                        <p>Guest speaker from Tesla discussing modern manufacturing techniques.</p>
+                        <p>
+                            Guest speaker from Tesla discussing modern
+                            manufacturing techniques.
+                        </p>
                         <div class="event-meta">
-                            <span><i class="fas fa-clock"></i> 4:00 PM - 6:00 PM</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Seminar Hall B</span>
+                            <span>
+                                <i class="fas fa-clock"></i> 4:00 PM - 6:00 PM
+                            </span>
+                            <span>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Seminar Hall B
+                            </span>
                         </div>
                         <a href="#join" class="event-register">Register Now</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Glow Line -->
+    <div class="glow-line"></div>
 
     <!-- ============ TEAM SECTION ============ -->
     <section id="team" class="team section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-users"></i> THE CREW</span>
-                <h2 class="section-title">Our <span class="highlight">Team</span></h2>
+                <span class="section-tag">
+                    <i class="fas fa-users"></i> THE CREW
+                </span>
+                <h2 class="section-title">
+                    Our <span class="highlight">Team</span>
+                </h2>
                 <div class="title-line"></div>
             </div>
 
             <div class="team-grid">
+
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder">
@@ -391,16 +610,24 @@
                         <span class="domain-tag mechanical">Mechanical</span>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Glow Line -->
+    <div class="glow-line"></div>
 
     <!-- ============ GALLERY SECTION ============ -->
     <section id="gallery" class="gallery section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-images"></i> SNAPSHOTS</span>
-                <h2 class="section-title">Our <span class="highlight">Gallery</span></h2>
+                <span class="section-tag">
+                    <i class="fas fa-images"></i> SNAPSHOTS
+                </span>
+                <h2 class="section-title">
+                    Our <span class="highlight">Gallery</span>
+                </h2>
                 <div class="title-line"></div>
             </div>
 
@@ -453,37 +680,56 @@
         </div>
     </section>
 
+    <!-- Glow Line -->
+    <div class="glow-line"></div>
+
     <!-- ============ CONTACT SECTION ============ -->
     <section id="contact" class="contact section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-envelope"></i> REACH OUT</span>
-                <h2 class="section-title">Contact <span class="highlight">Us</span></h2>
+                <span class="section-tag">
+                    <i class="fas fa-envelope"></i> REACH OUT
+                </span>
+                <h2 class="section-title">
+                    Contact <span class="highlight">Us</span>
+                </h2>
                 <div class="title-line"></div>
             </div>
 
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Let's Connect</h3>
-                    <p>Have questions? Want to collaborate? We'd love to hear from you!</p>
+                    <p>
+                        Have questions? Want to collaborate?
+                        We'd love to hear from you!
+                    </p>
 
                     <div class="info-items">
                         <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
                             <div>
                                 <h4>Location</h4>
-                                <p>Engineering Block, Room 204<br>Your University Name</p>
+                                <p>
+                                    Engineering Block, Room 204<br>
+                                    Your University Name
+                                </p>
                             </div>
                         </div>
                         <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
                             <div>
                                 <h4>Email</h4>
-                                <p>humanoidx.club@email.com</p>
+                                <p>techforge.club@email.com</p>
                             </div>
                         </div>
                         <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-phone"></i></div>
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
                             <div>
                                 <h4>Phone</h4>
                                 <p>+1 (555) 123-4567</p>
@@ -492,11 +738,21 @@
                     </div>
 
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -504,20 +760,25 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" placeholder="John Doe" required>
+                            <input type="text" id="name"
+                                   placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="john@email.com" required>
+                            <input type="email" id="email"
+                                   placeholder="john@email.com" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" id="subject" placeholder="How can we help?" required>
+                        <input type="text" id="subject"
+                               placeholder="How can we help?" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" rows="5" placeholder="Tell us more..." required></textarea>
+                        <textarea id="message" rows="5"
+                                  placeholder="Tell us more..."
+                                  required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full">
                         <i class="fas fa-paper-plane"></i>
@@ -528,21 +789,44 @@
         </div>
     </section>
 
+    <!-- Glow Line -->
+    <div class="glow-line"></div>
+
     <!-- ============ JOIN SECTION ============ -->
     <section id="join" class="join section">
         <div class="container">
             <div class="join-content">
-                <h2>Ready to <span class="highlight">Build</span> Something Amazing?</h2>
-                <p>Join HumanoidX today and be part of a community that designs, builds, and innovates.</p>
+                <h2>
+                    Ready to <span class="highlight">Build</span>
+                    Something Amazing?
+                </h2>
+                <p>
+                    Join TechForge today and be part of a community
+                    that designs, builds, and innovates.
+                </p>
                 <div class="join-perks">
-                    <div class="perk"><i class="fas fa-check"></i> Free Workshops & Training</div>
-                    <div class="perk"><i class="fas fa-check"></i> Access to Lab & Equipment</div>
-                    <div class="perk"><i class="fas fa-check"></i> Project Funding Support</div>
-                    <div class="perk"><i class="fas fa-check"></i> Industry Connections</div>
+                    <div class="perk">
+                        <i class="fas fa-check"></i>
+                        Free Workshops & Training
+                    </div>
+                    <div class="perk">
+                        <i class="fas fa-check"></i>
+                        Access to Lab & Equipment
+                    </div>
+                    <div class="perk">
+                        <i class="fas fa-check"></i>
+                        Project Funding Support
+                    </div>
+                    <div class="perk">
+                        <i class="fas fa-check"></i>
+                        Industry Connections
+                    </div>
                 </div>
-                <a href="https://forms.google.com" target="_blank" class="btn btn-primary btn-large">
+                <a href="https://forms.google.com"
+                   target="_blank"
+                   class="btn btn-primary btn-large">
                     <i class="fas fa-user-plus"></i>
-                    <span>Join HumanoidX Now - It's Free!</span>
+                    <span>Join TechForge Now - It's Free!</span>
                 </a>
             </div>
         </div>
@@ -552,13 +836,18 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
+
                 <div class="footer-about">
                     <a href="#" class="logo">
                         <i class="fas fa-cogs"></i>
                         <span>TECH<span class="highlight">FORGE</span></span>
                     </a>
-                    <p>Empowering students through hands-on technical education in CAD, Electronics, and Mechanical Engineering.</p>
+                    <p>
+                        Empowering students through hands-on technical education
+                        in CAD, Electronics, and Mechanical Engineering.
+                    </p>
                 </div>
+
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <a href="#home">Home</a>
@@ -567,6 +856,7 @@
                     <a href="#events">Events</a>
                     <a href="#contact">Contact</a>
                 </div>
+
                 <div class="footer-links">
                     <h4>Domains</h4>
                     <a href="#domains">CAD Design</a>
@@ -575,17 +865,26 @@
                     <a href="#gallery">Gallery</a>
                     <a href="#team">Team</a>
                 </div>
+
                 <div class="footer-newsletter">
                     <h4>Stay Updated</h4>
                     <p>Get the latest news and updates.</p>
                     <div class="newsletter-form">
                         <input type="email" placeholder="Your email">
-                        <button><i class="fas fa-arrow-right"></i></button>
+                        <button>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
+
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2025 HumanoidX Club. Made with <i class="fas fa-heart"></i> by students, for students.</p>
+                <p>
+                    &copy; 2025 TechForge Club. Made with
+                    <i class="fas fa-heart"></i>
+                    by students, for students.
+                </p>
             </div>
         </div>
     </footer>
@@ -597,4 +896,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>             
+</html>
