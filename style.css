@@ -2147,3 +2147,214 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 }
+/* ============================
+   TEAM TIER LABELS
+   ============================ */
+.team-tier-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 50px 0 25px;
+    position: relative;
+}
+
+.team-tier-label::before,
+.team-tier-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border));
+}
+
+.team-tier-label::after {
+    background: linear-gradient(90deg, var(--border), transparent);
+}
+
+.team-tier-label i {
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.team-tier-label span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 0 15px;
+}
+
+/* ============================
+   EXECUTIVE GRID (4 columns)
+   ============================ */
+.executive-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+/* ============================
+   LEADS GRID (3 columns)
+   ============================ */
+.leads-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+/* ============================
+   SUPPORT GRID (2 centered)
+   ============================ */
+.support-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============================
+   CHAIR CARD SPECIAL STYLE
+   ============================ */
+.chair-card {
+    position: relative;
+    border-color: var(--accent) !important;
+    background: linear-gradient(
+        180deg,
+        rgba(245, 158, 11, 0.05),
+        var(--bg-card)
+    ) !important;
+}
+
+.team-card-glow {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 22px;
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        var(--primary)
+    );
+    z-index: -1;
+    opacity: 0.3;
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.2; }
+    50%       { opacity: 0.5; }
+}
+
+/* ============================
+   AVATAR COLORS PER ROLE
+   ============================ */
+.avatar-chair {
+    background: linear-gradient(135deg, #f59e0b, #ef4444) !important;
+}
+
+.avatar-projects {
+    background: linear-gradient(135deg, #00d4ff, #0099cc) !important;
+}
+
+.avatar-elec {
+    background: linear-gradient(135deg, #7c3aed, #4f46e5) !important;
+}
+
+.avatar-design {
+    background: linear-gradient(135deg, #00d4ff, #7c3aed) !important;
+}
+
+.avatar-tech {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+}
+
+.avatar-mgmt {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+}
+
+.avatar-creative {
+    background: linear-gradient(135deg, #ec4899, #be185d) !important;
+}
+
+.avatar-events {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9) !important;
+}
+
+.avatar-finance {
+    background: linear-gradient(135deg, #10b981, #f59e0b) !important;
+}
+
+/* ============================
+   DOMAIN TAG COLORS PER ROLE
+   ============================ */
+.tag-chair {
+    background: rgba(245, 158, 11, 0.15) !important;
+    color: #f59e0b !important;
+}
+
+.tag-vice {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #ef4444 !important;
+}
+
+.tag-sec {
+    background: rgba(99, 102, 241, 0.15) !important;
+    color: #818cf8 !important;
+}
+
+.tag-projects {
+    background: rgba(0, 212, 255, 0.15) !important;
+    color: #00d4ff !important;
+}
+
+.tag-tech {
+    background: rgba(16, 185, 129, 0.15) !important;
+    color: #10b981 !important;
+}
+
+.tag-mgmt {
+    background: rgba(245, 158, 11, 0.15) !important;
+    color: #f59e0b !important;
+}
+
+.tag-creative {
+    background: rgba(236, 72, 153, 0.15) !important;
+    color: #ec4899 !important;
+}
+
+.tag-events {
+    background: rgba(139, 92, 246, 0.15) !important;
+    color: #8b5cf6 !important;
+}
+
+.tag-finance {
+    background: rgba(16, 185, 129, 0.15) !important;
+    color: #10b981 !important;
+}
+
+/* ============================
+   RESPONSIVE TEAM GRIDS
+   ============================ */
+@media (max-width: 1024px) {
+    .executive-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .leads-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .executive-grid,
+    .leads-grid,
+    .support-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .executive-grid,
+    .leads-grid,
+    .support-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
