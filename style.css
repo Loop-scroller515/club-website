@@ -2358,3 +2358,235 @@ body {
         grid-template-columns: 1fr !important;
     }
 }
+/* ============================
+   HUMANOIDX LOGO STYLES
+   ============================ */
+
+/* Logo Image in Nav */
+.logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    transition: all 0.3s;
+}
+
+.logo:hover .logo-img {
+    transform: rotate(360deg);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
+}
+
+.logo-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Remove the old gear icon animation */
+.logo i {
+    display: none;
+}
+
+/* ============================
+   LOADER LOGO ANIMATION
+   ============================ */
+.logo-loader {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: logoPulse 2s ease-in-out infinite;
+    z-index: 2;
+}
+
+.loader-ring {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border: 3px solid transparent;
+    border-top-color: var(--primary);
+    border-right-color: var(--secondary);
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px var(--primary));
+    }
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 25px var(--primary));
+    }
+}
+
+.loader-text {
+    font-family: 'JetBrains Mono', monospace !important;
+    background: none !important;
+    color: var(--text-primary) !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+}
+
+.text-gradient {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.loader-tagline {
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    animation: typeFlicker 1.5s infinite;
+}
+
+@keyframes typeFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ============================
+   HERO LOGO BIG DISPLAY
+   ============================ */
+.hero-logo-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    z-index: 2;
+    position: relative;
+    animation: heroLogoFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+}
+
+.logo-pulse {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    animation: pulseRing 2s ease-out infinite;
+}
+
+.logo-pulse::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 1px solid var(--secondary);
+    border-radius: 50%;
+    animation: pulseRing 2s ease-out infinite 0.5s;
+    opacity: 0.5;
+}
+
+@keyframes heroLogoFloat {
+    0%, 100% {
+        transform: translateY(0px);
+        filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+    }
+    50% {
+        transform: translateY(-15px);
+        filter: drop-shadow(0 0 35px rgba(0, 212, 255, 0.7));
+    }
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* ============================
+   GLITCH TEXT FOR LOGO STYLE
+   ============================ */
+.hero-title .line-1 {
+    font-family: 'JetBrains Mono', monospace !important;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 15px;
+}
+
+/* ============================
+   JOIN SECTION LOGO
+   ============================ */
+.join-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+    animation: heroLogoFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5));
+}
+
+/* ============================
+   CODE BRACKETS STYLE
+   ============================ */
+.highlight {
+    color: var(--primary);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* ============================
+   RESPONSIVE LOGO
+   ============================ */
+@media (max-width: 768px) {
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+    }
+    
+    .hero-logo-container {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .hero-logo {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .logo-pulse {
+        width: 130px;
+        height: 130px;
+    }
+}
