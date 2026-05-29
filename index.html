@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechForge Club - CAD | Electronics | Mechanical</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- FREE Icons -->
+    <title>HumanoidX - Where Biology Meets Technology</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- FREE Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- ============ SCROLL PROGRESS BAR ============ -->
+    <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- ============ CUSTOM CURSOR ============ -->
+    <!-- Custom Cursor -->
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
     <!-- ============ LOADER SCREEN ============ -->
     <div id="loader">
         <div class="loader-content">
-            <div class="gear-container">
-                <i class="fas fa-gear gear gear-1"></i>
-                <i class="fas fa-gear gear gear-2"></i>
+            <div class="logo-loader">
+                <img src="logo.png" alt="HumanoidX" class="loader-logo">
+                <div class="loader-ring"></div>
             </div>
-            <h1 class="loader-text">TECHFORGE</h1>
+            <h1 class="loader-text">
+                &lt;/<span class="text-gradient">HumanoidX</span>&gt;
+            </h1>
             <div class="loading-bar">
                 <div class="loading-fill"></div>
             </div>
+            <p class="loader-tagline">Initializing Neural Network...</p>
         </div>
     </div>
 
@@ -37,8 +39,10 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <i class="fas fa-cogs"></i>
-                <span>TECH<span class="highlight">FORGE</span></span>
+                <img src="logo.png" alt="HumanoidX" class="logo-img">
+                <span class="logo-text">
+                    &lt;/<span class="highlight">HumanoidX</span>&gt;
+                </span>
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -64,10 +68,8 @@
     <!-- ============ HERO SECTION ============ -->
     <section id="home" class="hero">
 
-        <!-- Particle Network Canvas -->
         <canvas id="networkCanvas"></canvas>
 
-        <!-- Floating Geometric Shapes -->
         <div class="floating-shapes">
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
@@ -76,53 +78,58 @@
             <div class="shape shape-5"></div>
         </div>
 
-        <!-- Floating Tech Icons -->
         <div class="tech-icons-float">
-            <i class="fas fa-cogs tech-icon-float"
+            <i class="fas fa-brain tech-icon-float"
                style="top:15%; left:8%; animation-delay:0s; font-size:4rem;"></i>
             <i class="fas fa-microchip tech-icon-float"
                style="top:70%; left:3%; animation-delay:-2s; font-size:3rem; color:var(--secondary);"></i>
-            <i class="fas fa-drafting-compass tech-icon-float"
-               style="top:25%; right:8%; animation-delay:-4s; font-size:3.5rem; color:var(--accent);"></i>
             <i class="fas fa-robot tech-icon-float"
+               style="top:25%; right:8%; animation-delay:-4s; font-size:3.5rem; color:var(--accent);"></i>
+            <i class="fas fa-network-wired tech-icon-float"
                style="top:75%; right:5%; animation-delay:-1s; font-size:3rem;"></i>
-            <i class="fas fa-bolt tech-icon-float"
+            <i class="fas fa-code tech-icon-float"
                style="top:50%; left:50%; animation-delay:-3s; font-size:2rem;"></i>
         </div>
 
-        <!-- Old floating particles -->
         <div class="hero-particles" id="particles"></div>
 
-        <!-- Main Hero Content -->
         <div class="hero-content">
+
+            <!-- Big Logo Display -->
+            <div class="hero-logo-container">
+                <img src="logo.png" alt="HumanoidX" class="hero-logo">
+                <div class="logo-pulse"></div>
+            </div>
+
             <div class="hero-badge">
-                <i class="fas fa-bolt"></i>
-                <span>INNOVATION HUB</span>
+                <i class="fas fa-brain"></i>
+                <span>BIOLOGY × TECHNOLOGY</span>
             </div>
 
             <h1 class="hero-title">
-                <span class="line-1 glitch" data-text="WE BUILD">WE BUILD</span>
+                <span class="line-1 glitch" data-text="&lt;/HumanoidX&gt;">&lt;/HumanoidX&gt;</span>
                 <span class="line-2">
-                    THE <span class="typing-text" id="typingText"></span>
+                    WHERE <span class="typing-text" id="typingText"></span>
                     <span class="cursor">|</span>
                 </span>
-                <span class="line-3">OF TOMORROW</span>
+                <span class="line-3">MEETS INNOVATION</span>
             </h1>
 
             <p class="hero-subtitle">
-                A student-led technical club mastering
-                <strong>CAD Design</strong>,
-                <strong>Electronics</strong> &
-                <strong>Mechanical Engineering</strong>
+                A pioneering student club bridging
+                <strong>Human Intelligence</strong> with
+                <strong>Machine Engineering</strong> — exploring
+                <strong>CAD</strong>, <strong>Electronics</strong> &
+                <strong>Mechanical</strong>
             </p>
 
             <div class="hero-buttons">
                 <a href="#join" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i>
-                    <span>Join the Revolution</span>
+                    <i class="fas fa-robot"></i>
+                    <span>Join HumanoidX</span>
                 </a>
                 <a href="#domains" class="btn btn-secondary">
-                    <i class="fas fa-compass"></i>
+                    <i class="fas fa-code"></i>
                     <span>Explore Domains</span>
                 </a>
             </div>
@@ -147,7 +154,6 @@
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
         <div class="scroll-indicator">
             <div class="mouse">
                 <div class="wheel"></div>
@@ -157,7 +163,6 @@
 
     </section>
 
-    <!-- Glow Line -->
     <div class="glow-line"></div>
 
     <!-- ============ ABOUT SECTION ============ -->
@@ -168,41 +173,43 @@
                     <i class="fas fa-info-circle"></i> WHO WE ARE
                 </span>
                 <h2 class="section-title">
-                    About <span class="highlight">TechForge</span>
+                    About <span class="highlight">HumanoidX</span>
                 </h2>
                 <div class="title-line"></div>
             </div>
 
             <div class="about-grid">
                 <div class="about-content">
-                    <h3>Forging the Future, One Project at a Time</h3>
+                    <h3>Where Human Minds Build Machine Futures</h3>
                     <p>
-                        TechForge is a passionate community of engineers, designers,
-                        and innovators who believe in learning by doing. Founded by
-                        students who wanted to bridge the gap between classroom
-                        theory and real-world application.
+                        HumanoidX represents the perfect fusion — half neural
+                        network, half circuit board. We are a community of
+                        engineers, programmers, and creators who believe the
+                        next frontier of technology lies at the intersection
+                        of human creativity and machine intelligence.
                     </p>
                     <p>
-                        We provide hands-on workshops, collaborative projects, and
-                        competitive opportunities across three core domains:
-                        Computer-Aided Design, Electronics, and Mechanical Engineering.
+                        From building humanoid robots to designing intelligent
+                        circuits, from CAD modeling complex mechanisms to
+                        programming embedded systems — we do it all,
+                        hands-on, together.
                     </p>
                     <div class="about-features">
                         <div class="feature">
                             <i class="fas fa-check-circle"></i>
-                            <span>Hands-on Workshop Every Week</span>
+                            <span>Weekly Hands-on Workshops</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-check-circle"></i>
-                            <span>Industry Mentorship Programs</span>
+                            <span>Industry Mentorship</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-check-circle"></i>
-                            <span>Competition Team Support</span>
+                            <span>Robotics Competitions</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-check-circle"></i>
-                            <span>Free Tools & Resources</span>
+                            <span>Free Tools & Lab Access</span>
                         </div>
                     </div>
                 </div>
@@ -210,22 +217,22 @@
                 <div class="about-visual">
                     <div class="vision-card">
                         <div class="card-icon">
-                            <i class="fas fa-eye"></i>
+                            <i class="fas fa-brain"></i>
                         </div>
                         <h4>Our Vision</h4>
                         <p>
-                            To create a generation of problem-solvers who can
-                            design, build, and innovate without limits.
+                            To create the next generation of innovators
+                            who can think like humans and build like machines.
                         </p>
                     </div>
                     <div class="mission-card">
                         <div class="card-icon">
-                            <i class="fas fa-bullseye"></i>
+                            <i class="fas fa-microchip"></i>
                         </div>
                         <h4>Our Mission</h4>
                         <p>
-                            Making technical education accessible, practical,
-                            and exciting for every student.
+                            Bridging the gap between biological intelligence
+                            and artificial systems through practical engineering.
                         </p>
                     </div>
                 </div>
@@ -233,7 +240,6 @@
         </div>
     </section>
 
-    <!-- Glow Line -->
     <div class="glow-line"></div>
 
     <!-- ============ SKILLS SECTION ============ -->
@@ -291,10 +297,10 @@
                         <span class="skill-name">
                             <i class="fas fa-robot"></i> Robotics & Automation
                         </span>
-                        <span class="skill-percent">75%</span>
+                        <span class="skill-percent">82%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-fill" data-width="75"></div>
+                        <div class="skill-fill" data-width="82"></div>
                     </div>
                 </div>
 
@@ -313,19 +319,18 @@
                 <div class="skill-item">
                     <div class="skill-header">
                         <span class="skill-name">
-                            <i class="fas fa-network-wired"></i> IoT & Embedded Systems
+                            <i class="fas fa-code"></i> Programming & AI
                         </span>
-                        <span class="skill-percent">80%</span>
+                        <span class="skill-percent">87%</span>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-fill" data-width="80"></div>
+                        <div class="skill-fill" data-width="87"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Glow Line -->
     <div class="glow-line"></div>
 
     <!-- ============ DOMAINS SECTION ============ -->
@@ -343,7 +348,6 @@
 
             <div class="domains-grid">
 
-                <!-- CAD Domain -->
                 <div class="domain-card" data-domain="cad">
                     <div class="domain-bg"></div>
                     <div class="domain-icon">
@@ -368,7 +372,6 @@
                     </div>
                 </div>
 
-                <!-- Electronics Domain -->
                 <div class="domain-card featured" data-domain="electronics">
                     <div class="domain-bg"></div>
                     <div class="featured-badge">POPULAR</div>
@@ -394,7 +397,6 @@
                     </div>
                 </div>
 
-                <!-- Mechanical Domain -->
                 <div class="domain-card" data-domain="mechanical">
                     <div class="domain-bg"></div>
                     <div class="domain-icon">
@@ -423,7 +425,6 @@
         </div>
     </section>
 
-    <!-- Glow Line -->
     <div class="glow-line"></div>
 
     <!-- ============ EVENTS SECTION ============ -->
@@ -455,13 +456,8 @@
                             No experience needed!
                         </p>
                         <div class="event-meta">
-                            <span>
-                                <i class="fas fa-clock"></i> 2:00 PM - 5:00 PM
-                            </span>
-                            <span>
-                                <i class="fas fa-map-marker-alt"></i>
-                                Lab 204, Engineering Block
-                            </span>
+                            <span><i class="fas fa-clock"></i> 2:00 PM - 5:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Lab 204</span>
                         </div>
                         <a href="#join" class="event-register">Register Now</a>
                     </div>
@@ -474,19 +470,14 @@
                     </div>
                     <div class="event-content">
                         <div class="event-badge competition">Competition</div>
-                        <h3>Circuit Builder Challenge</h3>
+                        <h3>HumanoidX Robotics Challenge</h3>
                         <p>
-                            Design and build a working circuit in 3 hours.
-                            Prizes worth $500!
+                            Design and build a working robot in 3 hours.
+                            Exciting prizes!
                         </p>
                         <div class="event-meta">
-                            <span>
-                                <i class="fas fa-clock"></i> 10:00 AM - 1:00 PM
-                            </span>
-                            <span>
-                                <i class="fas fa-map-marker-alt"></i>
-                                Main Auditorium
-                            </span>
+                            <span><i class="fas fa-clock"></i> 10:00 AM - 1:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Main Auditorium</span>
                         </div>
                         <a href="#join" class="event-register">Register Now</a>
                     </div>
@@ -499,19 +490,14 @@
                     </div>
                     <div class="event-content">
                         <div class="event-badge seminar">Seminar</div>
-                        <h3>Industry Talk: Future of Manufacturing</h3>
+                        <h3>Future of Humanoid Robotics</h3>
                         <p>
-                            Guest speaker discussing modern
-                            manufacturing techniques.
+                            Industry expert talk on the next decade of
+                            humanoid technology.
                         </p>
                         <div class="event-meta">
-                            <span>
-                                <i class="fas fa-clock"></i> 4:00 PM - 6:00 PM
-                            </span>
-                            <span>
-                                <i class="fas fa-map-marker-alt"></i>
-                                Seminar Hall B
-                            </span>
+                            <span><i class="fas fa-clock"></i> 4:00 PM - 6:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Seminar Hall B</span>
                         </div>
                         <a href="#join" class="event-register">Register Now</a>
                     </div>
@@ -521,7 +507,6 @@
         </div>
     </section>
 
-    <!-- Glow Line -->
     <div class="glow-line"></div>
 
     <!-- ============ TEAM SECTION ============ -->
@@ -538,7 +523,6 @@
                 <div class="title-line"></div>
             </div>
 
-            <!-- ── EXECUTIVE BOARD ── -->
             <div class="team-tier-label">
                 <i class="fas fa-crown"></i>
                 <span>Executive Board</span>
@@ -546,7 +530,6 @@
 
             <div class="team-grid executive-grid">
 
-                <!-- Chair -->
                 <div class="team-card chair-card">
                     <div class="team-card-glow"></div>
                     <div class="card-image">
@@ -568,7 +551,6 @@
                     </div>
                 </div>
 
-                <!-- Vice Chair -->
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder">
@@ -589,7 +571,6 @@
                     </div>
                 </div>
 
-                <!-- Secretary -->
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder">
@@ -610,7 +591,6 @@
                     </div>
                 </div>
 
-                <!-- Co-Secretary -->
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder">
@@ -633,7 +613,6 @@
 
             </div>
 
-            <!-- ── DEPARTMENT LEADS ── -->
             <div class="team-tier-label">
                 <i class="fas fa-layer-group"></i>
                 <span>Department Leads</span>
@@ -641,7 +620,6 @@
 
             <div class="team-grid leads-grid">
 
-                <!-- Projects Lead -->
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder avatar-projects">
@@ -662,7 +640,6 @@
                     </div>
                 </div>
 
-                <!-- Electronics Lead -->
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder avatar-elec">
@@ -683,7 +660,6 @@
                     </div>
                 </div>
 
-                <!-- D&A Lead -->
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder avatar-design">
@@ -704,7 +680,6 @@
                     </div>
                 </div>
 
-                <!-- Tech Lead -->
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder avatar-tech">
@@ -725,7 +700,6 @@
                     </div>
                 </div>
 
-                <!-- Management Lead -->
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder avatar-mgmt">
@@ -746,7 +720,6 @@
                     </div>
                 </div>
 
-                <!-- Design Team Lead -->
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder avatar-creative">
@@ -769,7 +742,6 @@
 
             </div>
 
-            <!-- ── SUPPORT LEADS ── -->
             <div class="team-tier-label">
                 <i class="fas fa-handshake"></i>
                 <span>Support & Operations</span>
@@ -777,7 +749,6 @@
 
             <div class="team-grid support-grid">
 
-                <!-- Events -->
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder avatar-events">
@@ -798,7 +769,6 @@
                     </div>
                 </div>
 
-                <!-- Finance -->
                 <div class="team-card">
                     <div class="card-image">
                         <div class="avatar-placeholder avatar-finance">
@@ -824,7 +794,6 @@
         </div>
     </section>
 
-    <!-- Glow Line -->
     <div class="glow-line"></div>
 
     <!-- ============ GALLERY SECTION ============ -->
@@ -889,7 +858,6 @@
         </div>
     </section>
 
-    <!-- Glow Line -->
     <div class="glow-line"></div>
 
     <!-- ============ CONTACT SECTION ============ -->
@@ -932,7 +900,7 @@
                             </div>
                             <div>
                                 <h4>Email</h4>
-                                <p>techforge.club@email.com</p>
+                                <p>humanoidx@email.com</p>
                             </div>
                         </div>
                         <div class="info-item">
@@ -941,7 +909,7 @@
                             </div>
                             <div>
                                 <h4>Phone</h4>
-                                <p>+1 (555) 123-4567</p>
+                                <p>+91 XXXXX XXXXX</p>
                             </div>
                         </div>
                     </div>
@@ -969,25 +937,20 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name"
-                                   placeholder="John Doe" required>
+                            <input type="text" id="name" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email"
-                                   placeholder="john@email.com" required>
+                            <input type="email" id="email" placeholder="john@email.com" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" id="subject"
-                               placeholder="How can we help?" required>
+                        <input type="text" id="subject" placeholder="How can we help?" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" rows="5"
-                                  placeholder="Tell us more..."
-                                  required></textarea>
+                        <textarea id="message" rows="5" placeholder="Tell us more..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full">
                         <i class="fas fa-paper-plane"></i>
@@ -998,20 +961,19 @@
         </div>
     </section>
 
-    <!-- Glow Line -->
     <div class="glow-line"></div>
 
     <!-- ============ JOIN SECTION ============ -->
     <section id="join" class="join section">
         <div class="container">
             <div class="join-content">
+                <img src="logo.png" alt="HumanoidX" class="join-logo">
                 <h2>
-                    Ready to <span class="highlight">Build</span>
-                    Something Amazing?
+                    Ready to <span class="highlight">Build</span> the Future?
                 </h2>
                 <p>
-                    Join TechForge today and be part of a community
-                    that designs, builds, and innovates.
+                    Join HumanoidX today and be part of a community
+                    where minds meet machines.
                 </p>
                 <div class="join-perks">
                     <div class="perk">
@@ -1031,11 +993,9 @@
                         Industry Connections
                     </div>
                 </div>
-                <a href="https://forms.google.com"
-                   target="_blank"
-                   class="btn btn-primary btn-large">
-                    <i class="fas fa-user-plus"></i>
-                    <span>Join TechForge Now - It's Free!</span>
+                <a href="https://forms.google.com" target="_blank" class="btn btn-primary btn-large">
+                    <i class="fas fa-robot"></i>
+                    <span>Join HumanoidX Now - It's Free!</span>
                 </a>
             </div>
         </div>
@@ -1048,12 +1008,14 @@
 
                 <div class="footer-about">
                     <a href="#" class="logo">
-                        <i class="fas fa-cogs"></i>
-                        <span>TECH<span class="highlight">FORGE</span></span>
+                        <img src="logo.png" alt="HumanoidX" class="logo-img">
+                        <span class="logo-text">
+                            &lt;/<span class="highlight">HumanoidX</span>&gt;
+                        </span>
                     </a>
                     <p>
-                        Empowering students through hands-on technical education
-                        in CAD, Electronics, and Mechanical Engineering.
+                        Where biology meets technology. Empowering students
+                        to build the next generation of intelligent machines.
                     </p>
                 </div>
 
@@ -1090,7 +1052,7 @@
 
             <div class="footer-bottom">
                 <p>
-                    &copy; 2025 TechForge Club. Made with
+                    &copy; 2025 HumanoidX. Made with
                     <i class="fas fa-heart"></i>
                     by students, for students.
                 </p>
@@ -1098,11 +1060,10 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top">
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 </html>
